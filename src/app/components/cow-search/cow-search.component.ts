@@ -20,7 +20,6 @@ export class CowSearchComponent {
   }
 
   search() {
-    // this.cows = this.cowService.filterCows(this.tag, this.status, this.pen);
     const filteredCows = this.cowService.filterCows(this.tag, this.status, this.pen);
     this.filtered.emit(filteredCows);
   }

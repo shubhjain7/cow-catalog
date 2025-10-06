@@ -1,21 +1,4 @@
-<!-- 
-<h2>Cow Catalog</h2>
-<app-cow-search (filtered)="onFilter($event)"></app-cow-search>
-<button routerLink="/new">Add New Cow</button>
 
-<ul *ngIf="cows.length && cows; else noList">
-  <li *ngFor="let cow of cows" (click)="viewCow(cow)">
-    <strong>ID:</strong> {{cow.id}} |
-    <strong>Sex:</strong> {{cow.sex}} |
-    <strong>Pen:</strong> {{cow.pen}} |
-    <strong>Status:</strong> {{cow.status}} |
-    <strong>Last Event:</strong> {{ cow.lastEventDate | date:'short' }}
-  </li>
-</ul>
-
-<ng-template #noList>
-    <p>No Records Found.</p>
-  </ng-template> -->
 <div class="catalog-container">
   <h2 class="title">🐮 Cow Catalog</h2>
 
