@@ -2,6 +2,14 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
 
+## Install Dependencies
+
+After taking clone of this project => go to project directory and run:
+
+```bash
+npm i
+```
+
 ## Development server
 
 To start a local development server, run:
