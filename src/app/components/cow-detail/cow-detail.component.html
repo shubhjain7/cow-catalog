@@ -1,4 +1,4 @@
-<div *ngIf="cow">
+<!-- <div *ngIf="cow">
   <h2>Cow Details: {{ cow.id }}</h2>
   <p><strong>Sex:</strong> {{ cow.sex }}</p>
   <p><strong>Pen:</strong> {{ cow.pen }}</p>
@@ -19,4 +19,27 @@
 
   <button routerLink="/">Back</button>
 </div>
+ -->
 
+ <div *ngIf="cow" class="cow-details-container">
+  <h2>Cow Details: {{ cow.id }}</h2>
+  <p><strong>Sex:</strong> {{ cow.sex }}</p>
+  <p><strong>Pen:</strong> {{ cow.pen }}</p>
+  <p><strong>Status:</strong> {{ cow.status }}</p>
+  <p *ngIf="cow.weight"><strong>Weight:</strong> {{ cow.weight }} kg</p>
+  <p><strong>Last Event:</strong> {{ cow.lastEventDate | date: 'short' }}</p>
+
+  <h3>Events:</h3>
+  <ul *ngIf="cow.events && cow.events.length; else noEvents">
+    <li *ngFor="let event of cow.events">
+      <strong>{{ event.type }}</strong> - {{ event.date | date: 'short' }}
+      <span *ngIf="event.details"> - {{ event.details }}</span>
+    </li>
+  </ul>
+
+  <ng-template #noEvents>
+    <p>No events recorded for this cow.</p>
+  </ng-template>
+
+  <button routerLink="/">← Back</button>
+</div>

@@ -1,4 +1,4 @@
-
+<!-- 
 <h2>Cow Catalog</h2>
 <app-cow-search (filtered)="onFilter($event)"></app-cow-search>
 <button routerLink="/new">Add New Cow</button>
@@ -15,4 +15,50 @@
 
 <ng-template #noList>
     <p>No Records Found.</p>
+  </ng-template> -->
+<div class="catalog-container">
+  <h2 class="title">🐮 Cow Catalog</h2>
+
+  <!-- Search + Filters -->
+  <app-cow-search (filtered)="onFilter($event)"></app-cow-search>
+
+  <!-- Add New -->
+  <div class="toolbar">
+    <button class="add-btn" routerLink="/new">➕ Add New Cow</button>
+  </div>
+
+  <!-- Cow List -->
+  <ul *ngIf="cows.length && cows; else noList" class="cow-list">
+    <li
+      *ngFor="let cow of cows"
+      (click)="viewCow(cow)"
+      [class.deceased]="cow.status === 'Deceased'"
+      class="cow-item"
+    >
+      <div class="cow-info">
+        <span><strong>ID:</strong> {{ cow.id }}</span>
+        <span><strong>Sex:</strong> {{ cow.sex }}</span>
+        <span><strong>Pen:</strong> {{ cow.pen }}</span>
+      </div>
+
+      <div class="cow-meta">
+        <span
+          class="status-badge"
+          [class.active]="cow.status === 'Active'"
+          [class.treatment]="cow.status === 'In Treatment'"
+          [class.deceased]="cow.status === 'Deceased'"
+          >{{ cow.status }}</span
+        >
+        <span class="event-date">
+          <strong>Last Event:</strong>
+          {{ cow.lastEventDate | date: 'MMM d, y, h:mm a' }}
+        </span>
+      </div>
+    </li>
+  </ul>
+
+  <!-- No Records -->
+  <ng-template #noList>
+    <p class="no-data">No Records Found 🐄</p>
   </ng-template>
+</div>

@@ -1,12 +1,127 @@
-ul {
+// ul {
+//   list-style: none;
+//   padding: 0;
+// }
+// li {
+//   cursor: pointer;
+//   padding: 0.5em;
+//   border-bottom: 1px solid #ccc;
+// }
+// li:hover {
+//   background: #f0f0f0;
+// }
+
+/* === Layout === */
+.catalog-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+/* === Button === */
+.add-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #43a047;
+}
+
+/* === Cow List === */
+.cow-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
-li {
+
+.cow-item {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
   cursor: pointer;
-  padding: 0.5em;
-  border-bottom: 1px solid #ccc;
 }
-li:hover {
-  background: #f0f0f0;
+
+.cow-item:hover {
+  background: #f3f3f3;
+  transform: scale(1.01);
+}
+
+/* Flex containers inside each list item */
+.cow-info,
+.cow-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* === Status Badges === */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+
+.status-badge.active {
+  background: #4caf50;
+}
+
+.status-badge.treatment {
+  background: #ff9800;
+}
+
+.status-badge.deceased {
+  background: #f44336;
+}
+
+/* === Other styling === */
+.event-date {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.no-data {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.cow-item.deceased {
+  opacity: 0.8;
+  background: #fff1f1;
+  border-color: #ffcdd2;
 }

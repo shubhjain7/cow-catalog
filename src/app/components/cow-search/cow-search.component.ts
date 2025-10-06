@@ -4,7 +4,9 @@ import { Cow } from '../../models/cow.model';
 
 @Component({
   selector: 'app-cow-search',
-  templateUrl: './cow-search.component.html'
+  templateUrl: './cow-search.component.html',
+  styleUrls: ['./cow-search.component.scss']
+
 })
 export class CowSearchComponent {
   tag = '';

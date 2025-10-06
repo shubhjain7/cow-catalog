@@ -1,11 +1,142 @@
-form {
+/* Main container */
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  align-items: center;
 }
-label {
-  margin-bottom: 10px;
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #333;
 }
-button {
-  margin-top: 10px;
+
+/* Section heading */
+.section-title {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 25px 0 10px;
+  border-bottom: 1px solid #c8e6c9;
+  padding-bottom: 4px;
+}
+
+/* Form layout */
+.cow-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Each label + field pair */
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  label {
+    flex: 1;
+    text-align: right;
+    font-weight: 500;
+    color: #444;
+    min-width: 120px;
+  }
+
+  input,
+  select {
+    flex: 2;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: #66bb6a;
+      box-shadow: 0 0 3px rgba(102, 187, 106, 0.3);
+    }
+  }
+}
+
+/* Button section */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 10px;
+
+  button {
+    padding: 10px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .submit-btn {
+    background-color: #4caf50;
+    color: #fff;
+
+    &:hover {
+      background-color: #43a047;
+      transform: scale(1.02);
+    }
+
+    &:disabled {
+      background-color: #a5d6a7;
+      cursor: not-allowed;
+    }
+  }
+
+  .back-btn {
+    background-color: #eee;
+    color: #333;
+
+    &:hover {
+      background-color: #ddd;
+      transform: scale(1.02);
+    }
+  }
+}
+
+/* Responsive: Stack labels and inputs on small screens */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+
+    label {
+      text-align: left;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+    }
+  }
+
+  .form-actions {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
 }

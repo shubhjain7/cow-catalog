@@ -1,0 +1,67 @@
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin: 0 auto 20px;
+  max-width: 800px;
+}
+
+/* Input and Select fields */
+.search-form input,
+.search-form select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  min-width: 160px;
+  transition: all 0.25s ease;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Button styling */
+.filter-btn {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  background: #43a047;
+  transform: scale(1.03);
+}
+
+.filter-btn:active {
+  transform: scale(0.97);
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-form input,
+  .search-form select,
+  .filter-btn {
+    width: 100%;
+  }
+}
