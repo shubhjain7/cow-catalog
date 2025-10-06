@@ -1,0 +1,12 @@
+
+<form (ngSubmit)="search()">
+  <input type="text" [(ngModel)]="tag" name="tag" placeholder="Search by Ear Tag"/>
+  <select [(ngModel)]="status" name="status">
+    <option value="">All Status</option>
+    <option value="Active">Active</option>
+    <option value="In Treatment">In Treatment</option>
+    <option value="Deceased">Deceased</option>
+  </select>
+  <input type="text" [(ngModel)]="pen" name="pen" placeholder="Pen"/>
+  <button type="submit">Filter</button>
+</form>

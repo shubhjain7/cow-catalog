@@ -1,0 +1,46 @@
+
+<h2>Add New Cow</h2>
+<form [formGroup]="cowForm" (ngSubmit)="onSubmit()">
+  <label>
+    Ear Tag:
+    <input formControlName="id" required />
+  </label>
+  <label>
+    Sex:
+    <select formControlName="sex">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </label>
+  <label>
+    Pen:
+    <input formControlName="pen" required />
+  </label>
+  <label>
+    Status:
+    <select formControlName="status">
+      <option value="Active">Active</option>
+      <option value="In Treatment">In Treatment</option>
+      <option value="Deceased">Deceased</option>
+    </select>
+  </label>
+  <label>
+    Weight:
+    <input type="number" formControlName="weight" />
+  </label>
+  <h3>Event Details</h3>
+  <label>
+    Event Type:
+    <input formControlName="eventType" required />
+  </label>
+  <label>
+    Event Date:
+    <input type="date" formControlName="eventDate" required />
+  </label>
+  <label>
+    Event Details:
+    <input formControlName="eventDetails" />
+  </label>
+  <button type="submit" [disabled]="!cowForm.valid">Add Cow</button>
+</form>
+<button routerLink="/">Back</button>
